@@ -1,1 +1,1090 @@
-In construction
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Walid Gharib | Clinical Data Manager & Data Scientist</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-sVYNxI3Cw6n3pIRsEh+T0oMJPq1Wy6Bx95g2xqB6f+GO6zkRgZNpmjDoE7YQDdyCjTiM/aYzfoalvexiLRnK5Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        :root {
+            --bg-1: #051320;
+            --bg-2: #0f2f3d;
+            --panel: rgba(10, 25, 36, 0.7);
+            --card: rgba(18, 44, 60, 0.85);
+            --ink: #e6f1f4;
+            --muted: #9bb0ba;
+            --accent: #f5b45f;
+            --accent-2: #36c0a7;
+            --border: rgba(255, 255, 255, 0.08);
+            --shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+            --radius: 18px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Sora", system-ui, sans-serif;
+            color: var(--ink);
+            background: radial-gradient(circle at 20% 20%, rgba(53, 181, 155, 0.1), transparent 30%),
+                radial-gradient(circle at 80% 10%, rgba(245, 180, 95, 0.12), transparent 25%),
+                linear-gradient(135deg, var(--bg-1), var(--bg-2));
+            min-height: 100vh;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            backdrop-filter: blur(16px);
+            background: linear-gradient(90deg, rgba(5, 19, 32, 0.9), rgba(15, 47, 61, 0.8));
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 18px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            font-family: "Space Grotesk", "Sora", sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand-name {
+            font-size: 19px;
+            line-height: 1.1;
+        }
+
+        .brand-badge {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            display: grid;
+            place-items: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            overflow: hidden;
+            padding: 4px;
+        }
+
+        .brand-holo {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.18)), url('assets/image/WalidGharib.png');
+            background-size: cover;
+            background-position: 50% 5%;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25);
+            filter: grayscale(1) contrast(1.8) brightness(1.2) opacity(0.6);
+        }
+
+        nav a {
+            color: var(--ink);
+            text-decoration: none;
+            margin-left: 18px;
+            font-weight: 500;
+            transition: color 0.2s ease, opacity 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 38px 22px 80px;
+            position: relative;
+        }
+
+        .grid-bg::before,
+        .grid-bg::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 80px 80px;
+            mask-image: radial-gradient(circle at 50% 30%, black 40%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .grid-bg::after {
+            background: radial-gradient(circle at 75% 25%, rgba(54, 192, 167, 0.13), transparent 40%),
+                radial-gradient(circle at 20% 60%, rgba(245, 180, 95, 0.1), transparent 35%);
+            mix-blend-mode: screen;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 28px;
+            margin-top: 12px;
+            position: relative;
+        }
+
+        .panel {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 26px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .panel::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.04), transparent 40%);
+            pointer-events: none;
+        }
+
+        .panel h1 {
+            font-family: "Space Grotesk", "Sora", sans-serif;
+            font-size: clamp(32px, 4vw, 46px);
+            margin: 0 0 10px;
+        }
+
+        .panel h2 {
+            font-family: "Space Grotesk", "Sora", sans-serif;
+            margin: 0 0 8px;
+            font-size: 22px;
+        }
+
+        .muted {
+            color: var(--muted);
+        }
+
+        .hero-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-text {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            min-width: 220px;
+            flex: 1;
+        }
+
+        .tagline {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--border);
+            padding: 10px 14px;
+            border-radius: 999px;
+            font-weight: 600;
+        }
+
+        .avatar-frame {
+            width: 140px;
+            height: 140px;
+            border-radius: 32px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.15));
+            flex-shrink: 0;
+        }
+
+        .avatar-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 5%;
+            display: block;
+        }
+
+        .contact-chips,
+        .contact-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 16px 0 6px;
+            align-items: center;
+        }
+
+        .contact-icons {
+            margin: 14px 0 0;
+        }
+
+        .contact-chips .icon-btn,
+        .contact-icons .icon-btn {
+            width: 48px;
+            height: 48px;
+        }
+
+        .summary {
+
+
+            margin: 16px 0 0;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 14px;
+            margin-top: 8px;
+        }
+
+        .stat-card {
+            background: var(--card);
+            border-radius: var(--radius);
+            padding: 16px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .stat-value {
+            font-size: 26px;
+            font-weight: 700;
+        }
+
+        section {
+            margin-top: 36px;
+            position: relative;
+            scroll-margin-top: 110px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .section-title::before {
+            content: "";
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+            border-radius: 999px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 28px;
+            display: grid;
+            gap: 14px;
+            margin-top: 16px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 12px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent);
+        }
+
+        .timeline-item {
+            position: relative;
+            background: var(--card);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            padding: 14px 16px 12px 16px;
+            display: grid;
+            gap: 6px;
+            transition: transform 0.15s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -20px;
+            top: 18px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.06);
+        }
+
+        .timeline-item:hover,
+        .timeline-item.active {
+            transform: translateX(4px);
+            border-color: rgba(245, 180, 95, 0.6);
+            box-shadow: 0 14px 32px rgba(0, 0, 0, 0.35);
+        }
+
+        .timeline-head {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: space-between;
+        }
+
+        .timeline-title {
+            margin: 0;
+            font-family: "Space Grotesk", "Sora", sans-serif;
+        }
+
+        .timeline-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .timeline-bullets {
+            margin: 4px 0 0;
+            padding-left: 18px;
+            color: #d8e6ea;
+            display: none;
+        }
+
+        .timeline-item.active .timeline-bullets {
+            display: block;
+        }
+
+        .icon-btn {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            color: #0a1824;
+            border: none;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .icon-btn:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.32);
+        }
+
+        .icon-btn[data-tip]::after {
+            content: attr(data-tip);
+            position: absolute;
+            bottom: calc(100% + 8px);
+            left: 50%;
+            transform: translate(-50%, 4px);
+            padding: 6px 10px;
+            border-radius: 8px;
+            background: rgba(5, 19, 32, 0.92);
+            color: #e6f1f4;
+            font-size: 12px;
+            white-space: nowrap;
+            border: 1px solid var(--border);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.12s ease, transform 0.12s ease;
+            z-index: 5;
+        }
+
+        .icon-btn[data-tip]:hover::after,
+        .icon-btn[data-tip]:focus-visible::after {
+            opacity: 1;
+            transform: translate(-50%, 0);
+        }
+
+        .icon-btn.secondary {
+            background: rgba(255, 255, 255, 0.12);
+            color: var(--ink);
+            border: 1px solid var(--border);
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: var(--radius);
+            padding: 18px 18px 14px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .entry-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 14px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 10px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            font-size: 13px;
+        }
+
+        .bullets {
+            padding-left: 18px;
+            margin: 8px 0 0;
+            color: #d8e6ea;
+        }
+
+        .bullets li {
+            margin-bottom: 6px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 14px;
+            margin-top: 16px;
+        }
+
+        .skill-row {
+            display: grid;
+            gap: 6px;
+        }
+
+        .bar {
+            height: 10px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.08);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bar span {
+            position: absolute;
+            inset: 0;
+            width: 0;
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            animation: load 1.3s ease forwards;
+        }
+
+        @keyframes load {
+            to {
+                width: var(--w);
+            }
+        }
+
+        .aside-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .aside {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 14px 16px;
+            color: #d9e5ea;
+        }
+
+        .cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 14px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            color: #0a1824;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 18px 0 30px;
+            color: var(--muted);
+            text-align: center;
+            font-size: 14px;
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="nav">
+            <div class="brand">
+                <div class="brand-badge">
+                    <div class="brand-holo" aria-hidden="true"></div>
+                </div>
+                <div>
+                    <div class="brand-name">Walid Gharib</div>
+                    <div class="muted" style="font-size:13px;">Clinical Data Manager & Data Scientist</div>
+                </div>
+            </div>
+            <nav aria-label="Primary">
+                <a href="#overview">Overview</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="grid-bg">
+        <section id="overview" class="hero">
+            <div class="panel">
+                <div class="hero-header">
+                    <div class="hero-text">
+                        <h1>Clinical Data Manager, Data Scientist, Teacher.</h1>
+                    </div>
+                    <div class="avatar-frame" aria-hidden="true">
+                        <img src="assets/image/WalidGharib.png" alt="Portrait of Walid Gharib" />
+                    </div>
+                </div>
+                <p class="summary" id="intro"></p>
+                <div class="contact-chips" id="contact-chips"></div>
+            </div>
+            <div class="panel">
+                <h2>Focus areas</h2>
+                <div class="aside-grid" id="asides"></div>
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="muted">Clinical & product work</div>
+                        <div class="stat-value">10+ yrs</div>
+                        <div class="muted">From validation to compliance and data quality.</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="muted">Teaching & mentoring</div>
+                        <div class="stat-value">100s</div>
+                        <div class="muted">Learners taught across bioinformatics, analytics, and reproducibility.</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="muted">Computing stack</div>
+                        <div class="stat-value">Full</div>
+                        <div class="muted">R, Python, SQL, cloud, containers, and HPC orchestration.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="section-title">Experience</div>
+            <div class="timeline" id="industry-timeline"></div>
+            <div class="section-title" style="margin-top:22px;">Research & Teaching</div>
+            <div class="timeline" id="research-timeline"></div>
+        </section>
+
+        <section id="education">
+            <div class="section-title">Education</div>
+            <div class="timeline" id="education-timeline"></div>
+        </section>
+
+        <section id="skills">
+            <div class="section-title">Skills</div>
+            <div class="skills-grid" id="tech-skills"></div>
+            <div class="section-title" style="margin-top:22px;">Languages</div>
+            <div class="skills-grid" id="lang-skills"></div>
+        </section>
+
+        <section>
+            <div class="section-title">Academic & Publications</div>
+            <div class="card" id="publications"></div>
+        </section>
+
+        <section id="contact">
+            <div class="section-title">Contact</div>
+            <div class="contact-icons" id="contact-cards"></div>
+        </section>
+
+        <footer>Powered by Walid Gharib-Blanc</footer>
+    </main>
+
+    <script id="resume-json" type="application/json">
+{
+    "text_blocks": {
+        "loc": "text",
+        "intro": "I am a curious and skilled data scientist, teacher, and clinical data manager who has a proven track record to drive business solutions improving patient care and outcomes. \nMy expertise in data analysis together with my strong background in health care management, teaching, and mentoring makes my profile very unique. I am eager to bring my skillset to a dynamic and forward-thinking organization, where I can continue to challenge myself and make a meaningful impact.",
+        "industy_experience_aside": "I have worked as a genomics data scientist mainly as client facing data scientist, conducting analysis and presenting results data and to clients wordwide. I am knowledgeable of rules and regulations undrelying products validation and compliance.",
+        "teaching_experience_aside": "I am passionate about knowledge transfer. I beleive that complex concepts can be taughed to diverse audience using a mix of innovative teaching methods and a positive attitude. I have hundreds of anonymous participants feedbacks from all courses participants attesting high teaching qualifications."
+    },
+    "entries": [
+        {
+            "section": "education",
+            "title": "PhD. Data science, Bioinformatics",
+            "location": "Lausanne, Switzerland",
+            "org": "University of Lausanne (UNIL)",
+            "span": "2009 – 2013",
+            "bullets": [
+                "Reasearched gene simlarity between human and other mammalian species",
+                "Focused on the elaboration of simulations mimicking genomics mutatioins testing limit of available prediction models"
+            ]
+        },
+        {
+            "section": "education",
+            "title": "CAS - Certificate of Advanced Studies: Healthcare management",
+            "location": "Lausanne, Switzerland",
+            "org": "Faculty of Business and Economics (HEC)",
+            "span": "2011 – 2012",
+            "bullets": [
+                "Elaboration of strategic planning for health care institutions",
+                "Elaboration of Key Performance Indicators (KPI)",
+                "Evaluation of clinical and public health decisions impacts"
+            ]
+        },
+        {
+            "section": "education",
+            "title": "MSc. Masters of Science: Bioinformatics",
+            "location": "Bordeaux, France",
+            "org": "University of Bordeaux (UB)",
+            "span": "2007 – 2009",
+            "bullets": [
+                "Master Thesis: Database restructuring"
+            ]
+        },
+        {
+            "section": "industry_positions",
+            "title": "Data Scientist - Client Facing Bioinformatician",
+            "location": "Saint-Sulpice, Switzerland",
+            "org": "SOPHiA GENETICS [TM](https://www.sophiagenetics.com/)",
+            "span": "2020 – 2022",
+            "bullets": [
+                "Product design - Gene panel design",
+                "Set-up clients with new products incl. presentation of analytical performance",
+                "Client support for product routine usage"
+            ]
+        },
+        {
+            "section": "industry_positions",
+            "title": "Senior Data Scientist - Product Validation and Compliance",
+            "location": "Saint-Sulpice, Switzerland",
+            "org": "SOPHiA GENETICS [TM](https://www.sophiagenetics.com/)",
+            "span": "2022 – 2023",
+            "bullets": [
+                "Planification, execution, risk based monitoring and reporting of clinical performance studies with emphasis on the data management aspect",
+                "Application of \"Good Clinical Practices\" (GCP certified) to all aspects of a clinical performance study",
+                "Gained knowlege in \"Guidelines Data protection Regulations\" (GDPR), ISO-20916 and IVDR",
+                "Elaboration of the \"state of the art\" of a device using systematic research defining key perfomance metrics"
+            ]
+        },
+        {
+            "section": "industry_positions",
+            "title": "Senior Clinical Data Manager",
+            "location": "Lausanne, Switzlerland",
+            "org": "CHUV - Lausanne University Hospital",
+            "span": "2023 – current",
+            "bullets": [
+                "BI systems, LLM tuning /inference, Data Management, clinical data extraction, grant proposals",
+                "Centralisation of *omics data",
+                "Leading the Data Quality project"
+            ]
+        },
+        {
+            "section": "research_positions",
+            "title": "Data Scientist",
+            "location": "Bern, Switzerland",
+            "org": "University of Bern (UniB)",
+            "span": "2015 – 2019",
+            "bullets": [
+                "Consulting on experimental design for various research projects",
+                "Performing data analysis and visualisations for the university reasearch labs"
+            ]
+        },
+        {
+            "section": "research_positions",
+            "title": "Researcher/Post-doc",
+            "location": "Lausanne, Switzlerland",
+            "org": "Swiss Institute of Bioinformatics (SIB)",
+            "span": "2014 – 2015",
+            "bullets": [
+                "Phylogenetics of large viruses"
+            ]
+        },
+        {
+            "section": "teaching_positions",
+            "title": "Data science Trainer",
+            "location": "Bern, Switzerland",
+            "org": "Swiss Institute of Bioinformatics (SIB)",
+            "span": "2015 – 2019",
+            "bullets": [
+                "Clinical Bioinformatics for somatic/germline mutations  (for Clinicians)",
+                "Next generation sequencing data analyses courses (WGS, WES, Single Cell, Genome assembly)",
+                "Reproduciblity courses",
+                "Data analysis using ( R and python)",
+                "Faculty of biology and medicine: Excellence in Teaching Award 2012 (UNIL-FBM)"
+            ]
+        },
+        {
+            "section": "academic_articles",
+            "title": "High impact factors peer reviewd journals",
+            "location": "Switzerland",
+            "org": "All Academic activities",
+            "span": "2013 – 2021",
+            "bullets": [
+                "[Available publicly at Google Schloar](https://scholar.google.com/citations?user=HeZAsLkAAAAJ&hl=en)"
+            ]
+        }
+    ],
+    "skills": [
+        {"name": "R", "level": 4.0},
+        {"name": "Python", "level": 4.0},
+        {"name": "Bash", "level": 4.0},
+        {"name": "SQL", "level": 3.0},
+        {"name": "AWK", "level": 3.0},
+        {"name": "Cluster computing", "level": 4.0},
+        {"name": "Cloud computing (AWS, Azure)", "level": 4.0},
+        {"name": "Docker", "level": 3.5}
+    ],
+    "languages": [
+        {"name": "English", "level": 4.0},
+        {"name": "French", "level": 5.0},
+        {"name": "Arabic", "level": 5.0}
+    ],
+    "contact_info": [
+        {"id": "email", "icon": "envelope", "value": "walid.gharib1@gmail.com"},
+        {"id": "email", "icon": "envelope", "value": "walid.gharib-blanc@chuv.ch"},
+        {"id": "linkedin", "icon": "linkedin", "value": "[Walid Gharib](https://www.linkedin.com/in/walid-gharib-9849941b/)"},
+        {"id": "mobile", "icon": "phone", "value": "\"+41(0)79 53 66 217\""},
+        {"id": "citizenship", "icon": "passport", "value": "Swiss citizenship"},
+        {"id": "home", "icon": "home", "value": "Morges, CH"}
+    ]
+}
+        </script>
+
+    <script>
+        const fallbackData = JSON.parse(document.getElementById("resume-json").textContent || "{}");
+
+        const iconMap = {
+            linkedin: "fa-brands fa-linkedin",
+            envelope: "fa-solid fa-envelope",
+            email: "fa-solid fa-envelope",
+            phone: "fa-solid fa-phone",
+            mobile: "fa-solid fa-phone",
+            passport: "fa-solid fa-passport",
+            home: "fa-solid fa-house",
+            scholar: "fa-solid fa-graduation-cap",
+            default: "fa-regular fa-circle"
+        };
+
+        const iconSources = {
+            linkedin: { type: "img", src: "assets/icons/linkedin.svg", fallback: iconMap.linkedin },
+            scholar: { type: "img", src: "assets/icons/googlescholar.svg", fallback: iconMap.scholar },
+            envelope: { type: "img", src: "assets/icons/mail.svg", fallback: iconMap.envelope },
+            email: { type: "img", src: "assets/icons/mail.svg", fallback: iconMap.email },
+            phone: { type: "img", src: "assets/icons/phone.svg", fallback: iconMap.phone },
+            mobile: { type: "img", src: "assets/icons/phone.svg", fallback: iconMap.mobile },
+            passport: { type: "img", src: "assets/icons/swiss.svg?v=2", fallback: iconMap.passport, noFilter: true },
+            citizenship: { type: "img", src: "assets/icons/swiss.svg?v=2", fallback: iconMap.passport, noFilter: true },
+            home: { type: "img", src: "assets/icons/address.svg", fallback: iconMap.home },
+            default: { type: "fa", cls: iconMap.default }
+        };
+
+        const iconHTML = (key, size = 20) => {
+            const icon = iconSources[key] || iconSources.default;
+            if (icon.type === "img") {
+                const fallback = icon.fallback || iconMap.default;
+                const filter = icon.noFilter ? "" : "filter:invert(92%) sepia(7%) saturate(244%) hue-rotate(161deg) brightness(94%) contrast(88%);";
+                return `<img src="${icon.src}" alt="${key}" style="width:${size}px;height:${size}px;${filter}" onerror="this.replaceWith(Object.assign(document.createElement('i'),{className:'${fallback}'}))" />`;
+            }
+            return `<i class="${icon.cls}"></i>`;
+        };
+
+        const markdownLink = (text = "") => {
+            const match = text.match(/\[([^\]]+)\]\(([^)]+)\)/);
+            if (match) return { label: match[1], href: match[2] };
+            return null;
+        };
+
+        const cleanValue = (value = "") => value.replace(/^"+|"+$/g, "").trim();
+
+        const canonicalId = (item) => {
+            const id = (item.id || "").toLowerCase();
+            if (["mobile", "tel", "phone"].includes(id)) return "phone";
+            if (["passport", "citizenship"].includes(id)) return "citizenship";
+            if (["home", "address", "location"].includes(id)) return "home";
+            if (id === "email") return "email";
+            return id;
+        };
+
+        const cleanContacts = (contactInfo = []) => {
+            let emailKept = false;
+            return contactInfo.filter(item => {
+                const id = canonicalId(item);
+                if (id === "phone") return false;
+                if (id === "email") {
+                    const value = cleanValue(item.value || "");
+                    if (!value || value.toLowerCase().includes("chuv")) return false;
+                    if (emailKept) return false;
+                    emailKept = true;
+                    return true;
+                }
+                return true;
+            });
+        };
+
+        const orderContactsForDisplay = (contactInfo = []) => {
+            const order = ["email", "phone", "citizenship", "home", "scholar", "linkedin"];
+            return [...contactInfo].sort((a, b) => {
+                const aId = canonicalId(a);
+                const bId = canonicalId(b);
+                const aIdx = order.indexOf(aId);
+                const bIdx = order.indexOf(bId);
+                if (aIdx === -1 && bIdx === -1) return 0;
+                if (aIdx === -1) return 1;
+                if (bIdx === -1) return -1;
+                return aIdx - bIdx;
+            });
+        };
+
+        const contactHref = (item) => {
+            const value = cleanValue(item.value || "");
+            const md = markdownLink(value);
+            if (item.id && item.id.toLowerCase() === "email") return `mailto:${value}`;
+            if (["mobile", "phone", "tel"].includes((item.id || "").toLowerCase())) {
+                const tel = value.replace(/[^+0-9]/g, "");
+                return tel ? `tel:${tel}` : "";
+            }
+            if (md) return md.href;
+            if (value.startsWith("http")) return value;
+            return "";
+        };
+
+        const extractScholarLink = (entries = []) => {
+            const pub = entries.find(e => e.section === "academic_articles");
+            const firstBullet = pub?.bullets?.[0] || "";
+            const md = markdownLink(firstBullet);
+            if (md?.href) return md.href;
+            if (firstBullet.startsWith("http")) return firstBullet;
+            return "";
+        };
+
+        const extendContactsWithScholar = (contactInfo = [], entries = []) => {
+            const scholarHref = extractScholarLink(entries);
+            const hasScholar = (contactInfo || []).some(c => (c.id || "").toLowerCase() === "scholar");
+            if (!scholarHref || hasScholar) return [...contactInfo];
+            return [...contactInfo, { id: "scholar", icon: "scholar", value: scholarHref }];
+        };
+
+        const entryTimelineItem = ({ title, org, location, span, bullets }) => {
+            const item = document.createElement("div");
+            item.className = "timeline-item";
+            item.innerHTML = `
+                <div class="timeline-head">
+                    <div class="pill"><i class="fa-solid fa-calendar"></i> ${span || ""}</div>
+                </div>
+                <h3 class="timeline-title">${title}</h3>
+                <div class="timeline-meta">
+                    <span><i class="fa-solid fa-building"></i> ${org}</span>
+                    <span><i class="fa-solid fa-location-dot"></i> ${location}</span>
+                </div>
+                <ul class="timeline-bullets">${(bullets || []).map(b => `<li>${b}</li>`).join("")}</ul>
+            `;
+            item.addEventListener("mouseenter", () => item.classList.add("active"));
+            item.addEventListener("mouseleave", () => item.classList.remove("active"));
+            item.addEventListener("click", () => item.classList.toggle("active"));
+            return item;
+        };
+
+        const renderSkills = (data, target) => {
+            const wrap = document.getElementById(target);
+            wrap.innerHTML = "";
+            (data || []).forEach(skill => {
+                const row = document.createElement("div");
+                row.className = "skill-row card";
+                const percent = Math.min(100, (Number(skill.level) / 5) * 100);
+                row.innerHTML = `
+                    <div style="display:flex;align-items:center;justify-content:space-between;">
+                        <strong>${skill.name}</strong>
+                        <span class="muted">${percent.toFixed(0)}%</span>
+                    </div>
+                    <div class="bar"><span style="--w:${percent}%"></span></div>
+                `;
+                wrap.appendChild(row);
+            });
+        };
+
+        const renderIconRail = (contactInfo, targetId, options = {}) => {
+            const wrap = document.getElementById(targetId);
+            if (!wrap) return;
+            wrap.innerHTML = "";
+            const list = contactInfo || [];
+            const limit = options.limit || list.length;
+            list.slice(0, limit).forEach(c => {
+                const href = contactHref(c);
+                const icon = iconHTML(c.icon, 22);
+                const tag = href ? "a" : "div";
+                const el = document.createElement(tag);
+                el.className = "icon-btn secondary";
+                el.innerHTML = icon;
+                const label = cleanValue(c.value) || c.id || "contact";
+                el.setAttribute("data-tip", label);
+                el.setAttribute("aria-label", label);
+                if (href) {
+                    el.href = href;
+                    if (href.startsWith("http")) {
+                        el.target = "_blank";
+                        el.rel = "noreferrer";
+                    }
+                }
+                wrap.appendChild(el);
+            });
+        };
+
+        const renderAsides = (textBlocks) => {
+            const wrap = document.getElementById("asides");
+            wrap.innerHTML = "";
+            const items = [
+                { label: "Industry depth", text: textBlocks.industy_experience_aside },
+                { label: "Teaching mindset", text: textBlocks.teaching_experience_aside }
+            ].filter(item => item.text);
+            items.forEach(item => {
+                const div = document.createElement("div");
+                div.className = "aside";
+                div.innerHTML = `<strong>${item.label}</strong><br>${item.text}`;
+                wrap.appendChild(div);
+            });
+        };
+
+        const renderExperience = (entries) => {
+            const bySection = (section) => entries.filter(e => e.section === section);
+            const industryWrap = document.getElementById("industry-timeline");
+            const researchWrap = document.getElementById("research-timeline");
+            industryWrap.innerHTML = "";
+            researchWrap.innerHTML = "";
+            bySection("industry_positions").forEach(item => industryWrap.appendChild(entryTimelineItem(item)));
+            [...bySection("research_positions"), ...bySection("teaching_positions")].forEach(item => researchWrap.appendChild(entryTimelineItem(item)));
+        };
+
+        const renderEducation = (entries) => {
+            const wrap = document.getElementById("education-timeline");
+            wrap.innerHTML = "";
+            entries.filter(e => e.section === "education").forEach(item => wrap.appendChild(entryTimelineItem(item)));
+        };
+
+        const renderPublications = (entries) => {
+            const pub = entries.find(e => e.section === "academic_articles");
+            const wrap = document.getElementById("publications");
+            if (!pub) {
+                wrap.textContent = "Publications list coming soon.";
+                return;
+            }
+            const firstBullet = pub.bullets?.[0] || "";
+            const md = markdownLink(firstBullet);
+            const linkHref = md ? md.href : undefined;
+            const onlyScholarLink = (pub.bullets || []).length === 1 && Boolean(linkHref);
+            const bulletsHtml = onlyScholarLink ? "" : `<ul class="bullets">${(pub.bullets || []).map(b => `<li>${b}</li>`).join("")}</ul>`;
+            wrap.innerHTML = `
+                <div class="pill"><i class="fa-solid fa-calendar"></i> ${pub.span}</div>
+                <h3 style="margin:6px 0 4px; font-family:'Space Grotesk','Sora',sans-serif;">${pub.title}</h3>
+                ${bulletsHtml}
+                ${linkHref ? `<div class="cta-row" style="margin-top:10px;"><a class="icon-btn secondary" aria-label="Google Scholar" href="${linkHref}" target="_blank" rel="noreferrer">${iconHTML("scholar", 22)}</a></div>` : ""}
+            `;
+        };
+
+        const renderContactCards = (contactInfo) => {
+            renderIconRail(contactInfo, "contact-cards");
+        };
+
+        const renderIntro = (textBlocks) => {
+            const introEl = document.getElementById("intro");
+            introEl.textContent = textBlocks.intro || "";
+        };
+
+        const renderAll = (data) => {
+            try {
+                const contacts = orderContactsForDisplay(
+                    extendContactsWithScholar(cleanContacts(data.contact_info || []), data.entries || [])
+                );
+                renderIntro(data.text_blocks || {});
+                renderIconRail(contacts, "contact-chips");
+                renderAsides(data.text_blocks || {});
+                renderExperience(data.entries || []);
+                renderEducation(data.entries || []);
+                renderSkills(data.skills || [], "tech-skills");
+                renderSkills(data.languages || [], "lang-skills");
+                renderPublications(data.entries || []);
+                renderContactCards(contacts);
+            } catch (err) {
+                console.error("Render error", err);
+                showError("Unable to render data. Please refresh.");
+            }
+        };
+
+        const showError = (message) => {
+            const introEl = document.getElementById("intro");
+            introEl.textContent = message;
+        };
+
+        fetch("data/resume.json", { cache: "no-cache" })
+            .then(res => {
+                if (!res.ok) throw new Error(`Failed to load resume data (${res.status})`);
+                return res.json();
+            })
+            .then(renderAll)
+            .catch(() => {
+                if (fallbackData && Object.keys(fallbackData).length) {
+                    renderAll(fallbackData);
+                } else {
+                    showError("Unable to load resume data right now. Please refresh.");
+                }
+            });
+    </script>
+</body>
+
+</html>
