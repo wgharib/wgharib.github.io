@@ -1,0 +1,207 @@
+{
+  "text_blocks": {
+    "loc": "text",
+    "intro": "I am a curious and skilled data scientist, teacher, and clinical data manager who has a proven track record to drive business solutions improving patient care and outcomes. \nMy expertise in data analysis together with my strong background in health care management, teaching, and mentoring makes my profile very unique. I am eager to bring my skillset to a dynamic and forward-thinking organization, where I can continue to challenge myself and make a meaningful impact.",
+    "industy_experience_aside": "I have worked as a genomics data scientist mainly as client facing data scientist, conducting analysis and presenting results data and to clients wordwide. I am knowledgeable of rules and regulations undrelying products validation and compliance.",
+    "teaching_experience_aside": "I am passionate about knowledge transfer. I beleive that complex concepts can be taughed to diverse audience using a mix of innovative teaching methods and a positive attitude. I have hundreds of anonymous participants feedbacks from all courses participants attesting high teaching qualifications."
+  },
+  "entries": [
+    {
+      "section": "education",
+      "title": "PhD. Data science, Bioinformatics",
+      "location": "Lausanne, Switzerland",
+      "org": "University of Lausanne (UNIL)",
+      "span": "2009 \u2013 2013",
+      "bullets": [
+        "Reasearched gene simlarity between human and other mammalian species",
+        "Focused on the elaboration of simulations mimicking genomics mutatioins testing limit of available prediction models"
+      ]
+    },
+    {
+      "section": "education",
+      "title": "CAS - Certificate of Advanced Studies: Healthcare management",
+      "location": "Lausanne, Switzerland",
+      "org": "Faculty of Business and Economics (HEC)",
+      "span": "2011 \u2013 2012",
+      "bullets": [
+        "Elaboration of strategic planning for health care institutions",
+        "Elaboration of Key Performance Indicators (KPI)",
+        "Evaluation of clinical and public health decisions impacts"
+      ]
+    },
+    {
+      "section": "education",
+      "title": "MSc. Masters of Science: Bioinformatics",
+      "location": "Bordeaux, France",
+      "org": "University of Bordeaux (UB)",
+      "span": "2007 \u2013 2009",
+      "bullets": [
+        "Master Thesis: Database restructuring"
+      ]
+    },
+    {
+      "section": "industry_positions",
+      "title": "Data Scientist - Client Facing Bioinformatician",
+      "location": "Saint-Sulpice, Switzerland",
+      "org": "SOPHiA GENETICS [TM](https://www.sophiagenetics.com/)",
+      "span": "2020 \u2013 2022",
+      "bullets": [
+        "Product design - Gene panel design",
+        "Set-up clients with new products incl. presentation of analytical performance",
+        "Client support for product routine usage"
+      ]
+    },
+    {
+      "section": "industry_positions",
+      "title": "Senior Data Scientist - Product Validation and Compliance",
+      "location": "Saint-Sulpice, Switzerland",
+      "org": "SOPHiA GENETICS [TM](https://www.sophiagenetics.com/)",
+      "span": "2022 \u2013 2023",
+      "bullets": [
+        "Planification, execution, risk based monitoring and reporting of clinical performance studies with emphasis on the data management aspect",
+        "Application of \"Good Clinical Practices\" (GCP certified) to all aspects of a clinical performance study",
+        "Gained knowlege in \"Guidelines Data protection Regulations\" (GDPR), ISO-20916 and IVDR",
+        "Elaboration of the \"state of the art\" of a device using systematic research defining key perfomance metrics"
+      ]
+    },
+    {
+      "section": "industry_positions",
+      "title": "Senior Clinical Data Manager",
+      "location": "Lausanne, Switzlerland",
+      "org": "CHUV - Lausanne University Hospital",
+      "span": "2023 \u2013 current",
+      "bullets": [
+        "BI systems, LLM tuning /inference, Data Management, clinical data extraction, grant proposals",
+        "Centralisation of *omics data",
+        "Leading the Data Quality project"
+      ]
+    },
+    {
+      "section": "research_positions",
+      "title": "Data Scientist",
+      "location": "Bern, Switzerland",
+      "org": "University of Bern (UniB)",
+      "span": "2015 \u2013 2019",
+      "bullets": [
+        "Consulting on experimental design for various research projects",
+        "Performing data analysis and visualisations for the university reasearch labs"
+      ]
+    },
+    {
+      "section": "research_positions",
+      "title": "Researcher/Post-doc",
+      "location": "Lausanne, Switzlerland",
+      "org": "Swiss Institute of Bioinformatics (SIB)",
+      "span": "2014 \u2013 2015",
+      "bullets": [
+        "Phylogenetics of large viruses"
+      ]
+    },
+    {
+      "section": "teaching_positions",
+      "title": "Data science Trainer",
+      "location": "Bern, Switzerland",
+      "org": "Swiss Institute of Bioinformatics (SIB)",
+      "span": "2015 \u2013 2019",
+      "bullets": [
+        "Clinical Bioinformatics for somatic/germline mutations  (for Clinicians)",
+        "Next generation sequencing data analyses courses (WGS, WES, Single Cell, Genome assembly)",
+        "Reproduciblity courses",
+        "Data analysis using ( R and python)",
+        "Faculty of biology and medicine: Excellence in Teaching Award 2012 (UNIL-FBM)"
+      ]
+    },
+    {
+      "section": "academic_articles",
+      "title": "High impact factors peer reviewd journals",
+      "location": "Switzerland",
+      "org": "All Academic activities",
+      "span": "2013 \u2013 2021",
+      "bullets": [
+        "[Available publicly at Google Schloar](https://scholar.google.com/citations?user=HeZAsLkAAAAJ&hl=en)"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "R",
+      "level": 4.0
+    },
+    {
+      "name": "Python",
+      "level": 4.0
+    },
+    {
+      "name": "Bash",
+      "level": 4.0
+    },
+    {
+      "name": "SQL",
+      "level": 3.0
+    },
+    {
+      "name": "AWK",
+      "level": 3.0
+    },
+    {
+      "name": "Cluster computing",
+      "level": 4.0
+    },
+    {
+      "name": "Cloud computing (AWS, Azure)",
+      "level": 4.0
+    },
+    {
+      "name": "Docker",
+      "level": 3.5
+    }
+  ],
+  "languages": [
+    {
+      "name": "English",
+      "level": 4.0
+    },
+    {
+      "name": "French",
+      "level": 5.0
+    },
+    {
+      "name": "Arabic",
+      "level": 5.0
+    }
+  ],
+  "contact_info": [
+    {
+      "id": "email",
+      "icon": "envelope",
+      "value": "walid.gharib1@gmail.com"
+    },
+    {
+      "id": "email",
+      "icon": "envelope",
+      "value": "walid.gharib-blanc@chuv.ch"
+    },
+    {
+      "id": "linkedin",
+      "icon": "linkedin",
+      "value": "[Walid Gharib](https://www.linkedin.com/in/walid-gharib-9849941b/)"
+    },
+    {
+      "id": "mobile",
+      "icon": "phone",
+      "value": "\"+41(0)79 53 66 217\""
+    },
+    {
+      "id": "citizenship",
+      "icon": "passport",
+      "value": "Swiss citizenship"
+    },
+    {
+      "id": "home",
+      "icon": "home",
+      "value": "Morges, CH"
+    }
+  ],
+  "generated_at": "2025-12-05T10:24:03.943083Z",
+  "workbook": "Walid_cv_data_2pages.xlsx"
+}
